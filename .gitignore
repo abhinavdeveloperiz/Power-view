@@ -11,6 +11,8 @@ ENV/
 build/
 dist/
 *.egg-info/
+*.sqlite3
+staticfiles/
 
 # Node & Frontend
 node_modules/

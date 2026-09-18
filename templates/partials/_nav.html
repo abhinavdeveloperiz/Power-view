@@ -1,7 +1,8 @@
+{% load static %}
 <nav class="custom-navbar navbar navbar-expand-lg navbar-dark" aria-label="Power View navigation bar">
   <div class="container">
     <a class="navbar-brand" href="#home">
-      <img src="{{ url_for('static', filename='images/logo-light.svg') }}" alt="Power View" style="height: 40px; width: auto;" />
+      <img src="{% static 'images/logo-light.svg' %}" alt="Power View" style="height: 40px; width: auto;" />
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsPowerView" aria-controls="navbarsPowerView" aria-expanded="false" aria-label="Toggle navigation">
