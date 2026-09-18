@@ -718,6 +718,13 @@ body {
   color: var(--pv-blue);
   font-size: 20px;
   transition: all 0.3s ease;
+  position: relative;
+}
+
+.feature .icon::before,
+.feature .icon:before {
+  display: none !important;
+  content: none !important;
 }
 
 .feature:hover .icon {
