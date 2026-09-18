@@ -1,0 +1,43 @@
+<nav class="custom-navbar navbar navbar-expand-lg navbar-dark" aria-label="Power View navigation bar">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <img src="{{ url_for('static', filename='images/logo-light.svg') }}" alt="Power View" style="height: 40px; width: auto;" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsPowerView" aria-controls="navbarsPowerView" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsPowerView">
+      <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact Us</a>
+        </li>
+      </ul>
+
+      <ul class="custom-navbar-cta navbar-nav mb-2 mb-lg-0 ms-lg-4 d-flex align-items-center gap-3">
+        <li class="d-none d-xl-block">
+          <a href="tel:9947367322" class="text-white text-decoration-none d-flex align-items-center gap-2 font-weight-500" style="font-size: 14px;">
+            <i class="fas fa-phone-alt text-warning"></i>
+            <span>9947 367 322</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-cta-btn">
+            <i class="fas fa-paper-plane"></i>
+            <span>Get Quote</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

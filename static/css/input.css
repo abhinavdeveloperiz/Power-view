@@ -1,0 +1,225 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply font-body text-pv-gray-text;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-pv-accent-red text-white font-semibold px-7 py-3 rounded-full shadow-lg active:scale-95 transition-all duration-200;
+    filter: none;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.1);
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white font-semibold px-7 py-3 rounded-full active:scale-95 transition-all duration-200;
+  }
+  .btn-outline:hover {
+    background-color: #FFFFFF;
+    color: #0B1F3A;
+  }
+  .btn-whatsapp {
+    @apply inline-flex items-center gap-2 bg-green-500 text-white font-semibold px-5 py-2.5 rounded-full hover:bg-green-600 active:scale-95 transition-all duration-200 shadow-md;
+  }
+  .section-title {
+    @apply font-heading text-3xl sm:text-4xl font-bold text-pv-navy-dark text-center mb-3;
+  }
+  .section-subtitle {
+    @apply text-pv-gray-text text-center max-w-2xl mx-auto text-base sm:text-lg leading-relaxed;
+  }
+  .service-card {
+    @apply bg-white rounded-2xl shadow-md transition-all duration-300 overflow-hidden flex flex-col;
+  }
+  .service-card:hover {
+    @apply shadow-xl;
+    transform: translateY(-4px);
+  }
+  .stat-box {
+    @apply bg-pv-offwhite rounded-2xl p-6 text-center border border-blue-100 transition-colors duration-200;
+  }
+  .stat-box:hover {
+    border-color: #1E5FA8;
+  }
+  .brand-card {
+    @apply bg-white rounded-xl p-5 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 cursor-default;
+  }
+  .contact-info-item {
+    @apply flex items-start gap-4;
+    color: rgba(255,255,255,0.9);
+  }
+  .contact-icon {
+    @apply w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5;
+    background-color: rgba(30,95,168,0.3);
+  }
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200;
+  }
+  .form-input:focus {
+    --tw-ring-color: #1E5FA8;
+  }
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1.5;
+  }
+  .nav-link {
+    @apply font-medium transition-colors duration-200;
+    color: rgba(255,255,255,0.8);
+  }
+  .nav-link:hover {
+    color: #FFFFFF;
+  }
+  .trust-badge {
+    @apply flex flex-col items-center gap-1.5 transition-colors duration-200;
+    color: rgba(255,255,255,0.8);
+  }
+  .trust-badge:hover {
+    color: #FFFFFF;
+  }
+}
+
+/* 21st.dev & React Bits: Spotlight Card Effect */
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s cubic-bezier(0.2, 0, 0, 1), border-color 0.25s ease;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(30, 95, 168, 0.18),
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Glare reflection sheen */
+.card-glare {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glare::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.18) 45%,
+    transparent 55%
+  );
+  transform: translateX(-100%) rotate(25deg);
+  pointer-events: none;
+  transition: transform 0.75s ease;
+  z-index: 2;
+}
+
+.card-glare:hover::after {
+  transform: translateX(100%) rotate(25deg);
+}
+
+/* Magnetic button helper */
+.magnetic-btn {
+  display: inline-flex;
+  will-change: transform;
+}
+
+/* WhatsApp pulse ring */
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.wa-pulse {
+  animation: wa-pulse 2s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Hero Parallax Card & 3D Interactive Depth Layers
+════════════════════════════════════════════════════════════ */
+.hero-parallax-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.hero-parallax-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.hero-floating-badge-1 {
+  transform: translateZ(40px);
+  will-change: transform;
+}
+
+.hero-floating-badge-2 {
+  transform: translateZ(28px);
+  will-change: transform;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Masonry Grid with Scroll-Driven Animation
+════════════════════════════════════════════════════════════ */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: scale(0.88) rotate(calc(var(--side, 1) * (4deg * var(--amp, 1))));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.masonry-card-wrapper {
+  will-change: transform, opacity;
+
+  /* 2-column transform origin (mobile / tablet) */
+  &:nth-of-type(2n + 1) { transform-origin: 25vw 100%; }
+  &:nth-of-type(2n) { transform-origin: -25vw 100%; }
+
+  /* 3-column transform origin (desktop) */
+  @media (min-width: 1024px) {
+    &:nth-of-type(3n + 1) { transform-origin: 50vw 100%; }
+    &:nth-of-type(3n + 2) { transform-origin: 0vw 100%; }
+    &:nth-of-type(3n) { transform-origin: -50vw 100%; }
+  }
+
+  /* CSS Scroll-Driven Animation where supported */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      animation: slide-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+  }
+}

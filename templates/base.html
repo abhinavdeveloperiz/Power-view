@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power View — CCTV, Solar &amp; Inverter Dealer in Kollam</title>
+  <meta name="description" content="Power View is Kollam's trusted dealer for CCTV surveillance systems, solar panels, solar water heaters, online UPS, inverters and tubular batteries. Near Meditrina Hospital, Kannanalloor Road, Kollam." />
+  <meta name="keywords" content="CCTV Kollam, Solar panels Kollam, Inverter dealer Kollam, Hikvision dealer Kerala, CP Plus CCTV Kerala, tubular battery Kollam, Power View Kollam" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomainhere.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomainhere.com/" />
+  <meta property="og:title" content="Power View — CCTV, Solar &amp; Inverter Dealer in Kollam, Kerala" />
+  <meta property="og:description" content="Hikvision, CP Plus, Dahua CCTV • Waaree Solar Panels • Exide/Luminous Inverters & Batteries — Installed &amp; Serviced in Kollam." />
+  <meta property="og:image" content="{{ url_for('static', filename='images/og-image.jpg') }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Power View — CCTV, Solar &amp; Inverter Dealer in Kollam" />
+  <meta name="twitter:description" content="Kollam's trusted CCTV, Solar &amp; Power Backup dealer. Call 9947 367 322." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}" />
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/favicon.png') }}" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Furni Bootstrap 5 & Template CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='furni/css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='furni/css/style.css') }}" />
+
+  <!-- Tailwind compiled utilities -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}" />
+
+  <!-- Power View Theme & Authoritative Grid/Margins (Loads last to guarantee perfect margins) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='furni/css/powerview-theme.css') }}" />
+
+  <script>
+    // Ensure the page always starts from the top/homepage on reload or fresh visit
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // If the page was reloaded, clear any section hash so it always starts from homepage
+    (function () {
+      const isReload = window.performance && (
+        (performance.navigation && performance.navigation.type === 1) ||
+        (performance.getEntriesByType && performance.getEntriesByType('navigation')[0] && performance.getEntriesByType('navigation')[0].type === 'reload')
+      );
+      if (isReload && window.location.hash) {
+        history.replaceState(null, document.title, window.location.pathname + window.location.search);
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }
+    })();
+  </script>
+
+  {% block head %}{% endblock %}
+</head>
+<body class="bg-light antialiased">
+
+  <!-- ===== HEADER / NAV ===== -->
+  {% include 'partials/_nav.html' %}
+
+  <!-- ===== PAGE CONTENT ===== -->
+  {% block content %}{% endblock %}
+
+  <!-- ===== FOOTER ===== -->
+  {% include 'partials/_footer.html' %}
+
+  <!-- ===== FLOATING ELEMENTS ===== -->
+
+  <!-- Floating Call button (positioned above WhatsApp) -->
+  <a href="tel:9947367322"
+     aria-label="Call Power View at 9947 367 322"
+     title="Call Power View: 9947 367 322"
+     class="floating-call-btn magnetic-btn">
+    <i class="fas fa-phone-alt fs-5 text-white"></i>
+  </a>
+
+  <!-- WhatsApp floating button with pulse ring -->
+  <a href="https://wa.me/919947367322?text=Hi%20Power%20View%2C%20I%27m%20interested%20in%20your%20CCTV%2FSolar%20products"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Chat with Power View on WhatsApp"
+     title="WhatsApp Power View"
+     class="floating-wa-btn wa-pulse-ring magnetic-btn">
+    <i class="fab fa-whatsapp fs-3 text-white"></i>
+  </a>
+
+  <!-- Back to top -->
+  <button id="back-to-top"
+          aria-label="Back to top"
+          class="magnetic-btn fixed bottom-6 left-6 z-50 w-12 h-12 bg-pv-navy hover:bg-pv-blue rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none translate-y-4 transition-all duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="{{ url_for('static', filename='furni/js/bootstrap.bundle.min.js') }}" defer></script>
+
+  <!-- External Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Application Scripts -->
+  <script src="{{ url_for('static', filename='js/nav.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/corridor.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/spotlight.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/animations.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/form.js') }}" defer></script>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

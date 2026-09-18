@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yourdomainhere.com/sitemap.xml
