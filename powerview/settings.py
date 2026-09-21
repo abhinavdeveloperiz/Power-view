@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 SECRET_KEY = os.environ.get(
     'SECRET_KEY',
-    'django-insecure-powerview-kollam-cctv-solar-inverter-key-2026-prod-ready'
+    'django-insecure-powerview-kollam-cctv-inverter-key-2026-prod-ready'
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!

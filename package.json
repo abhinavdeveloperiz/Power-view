@@ -1,7 +1,7 @@
 {
   "name": "powerview-website",
   "version": "1.0.0",
-  "description": "Power View CCTV Solar Inverter website – Tailwind CSS build",
+  "description": "Power View CCTV Inverter website – Tailwind CSS build",
   "scripts": {
     "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify",
     "watch:css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch"
